@@ -1,0 +1,142 @@
+/* ===========================
+   Malla Interactiva QFAR UV
+   =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #edf4ff;
+  --surface: #ffffff;
+  --primary: #2d6cdf;
+  --primary-dark: #1f4ea8;
+  --approved: #39b66a;
+  --available: #2d6cdf;
+  --blocked: #c7cedb;
+  --text: #233044;
+  --shadow: 0 8px 20px rgba(0,0,0,.08);
+  --radius: 18px;
+}
+
+body{
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+header{
+  padding:40px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:2.3rem;
+  color:var(--primary-dark);
+}
+
+header h2{
+  margin-top:10px;
+  font-size:1rem;
+  font-weight:500;
+  color:#60708c;
+}
+
+.progress-container{
+  width:min(700px,90%);
+  height:18px;
+  margin:30px auto 10px;
+  background:#dbe7ff;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+#progress-bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#62b2ff,#2d6cdf);
+  transition:.3s;
+}
+
+#progress-text{
+  font-weight:600;
+}
+
+main{
+  padding:25px;
+}
+
+#curriculum{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  align-items:flex-start;
+  padding-bottom:30px;
+}
+
+.semester{
+  min-width:280px;
+}
+
+.semester h3{
+  text-align:center;
+  margin-bottom:15px;
+  color:var(--primary-dark);
+}
+
+.course{
+  background:var(--surface);
+  border-left:6px solid var(--available);
+  border-radius:var(--radius);
+  padding:15px;
+  margin-bottom:15px;
+  box-shadow:var(--shadow);
+  transition:.2s;
+  cursor:pointer;
+}
+
+.course:hover{
+  transform:translateY(-4px);
+}
+
+.course h4{
+  color:#5b6f8f;
+  font-size:.8rem;
+}
+
+.course h2{
+  margin-top:8px;
+  font-size:1rem;
+}
+
+.course.blocked{
+  border-left-color:var(--blocked);
+  opacity:.45;
+}
+
+.course.available{
+  border-left-color:var(--available);
+}
+
+.course.approved{
+  border-left-color:var(--approved);
+  background:#edfff3;
+}
+
+@media(max-width:700px){
+
+  header{
+    padding:25px 15px;
+  }
+
+  header h1{
+    font-size:1.8rem;
+  }
+
+  .semester{
+    min-width:240px;
+  }
+
+}
